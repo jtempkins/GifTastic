@@ -22,13 +22,17 @@ function createButtons() {
     event.preventDefault();
 
     var cartoon = $("#cartoonInput").val().trim();
-   topics.push(cartoon);
+    topics.push(cartoon);
 
     // Calling createButtons
     createButtons();
+    $("#addCartoon").html("");
   });
 
   // Calling the createButtons to display the initial list of cartoons
   createButtons();
+
+
+  // ISSUES: input form is not clearing
 
 
