@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>GifTastic</title>
+   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+
+    <div class="container">
+        <h1>Cartoon Giphys Galore!</h1>
+        <div id="buttonsClear"></div>
+        <!-- Movies will get dumped here -->
+        <div id="CartoonHolder">    
+        </div>
+    
+        <form id="cartoon-form">
+          <label for="cartoonInput">Add a Cartoon</label>
+          <input type="text" id="cartoonInput"><br>
+    
+          <!-- Button triggers new movie to be added -->
+          <input id="addCartoon" type="submit" value="Submit">
+        </form>
+ 
+        
+    <!--jquery link  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!--javascript link  -->
+    <script src="assets/javascript/app.js"></script>
+</body>
+</html>
+<!-- //this is the for loop for the creation of buttons
+var all_short_btns = $(".Short");
+for(i=0; i< all_short_btns.length; i++){
+   alert(all_short_btns[i].innerText);
+} -->
+
