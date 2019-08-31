@@ -14,7 +14,7 @@ function createButtons() {
       a.addClass("cartoon");
       a.attr("data-name", topics[i]);
       a.text(topics[i]);
-      $("#buttonsClear").append(a);
+      $("#cartoonHolder").append(a);
     }
   }
 
@@ -27,23 +27,20 @@ function createButtons() {
 
     // Calling createButtons
     createButtons();
-    $("#addCartoon").html("");
+    $("#cartoonInput").val("");
   });
 
   // Calling the createButtons to display the initial list of cartoons
   createButtons();
 
-
-
-//attempt to add images from here:
-
   // //  // Event listener for  topic buttons
-   $("button").on("click", function() {
+   $("#cartoonHolder").on("click", "button", function(event) {
+    event.preventDefault();
+   var toon = $(this).attr("data-name");
+    console.log(toon);
 
-   var toon = $(this).attr("cartoon");
-  
    //   // // Storing our giphy API URL for a random cat image
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + topics + "&api_key=LbW049mOxR1yjz75yNYMbx9Ufj1FxX32&limit=10";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + toon + "&api_key=LbW049mOxR1yjz75yNYMbx9Ufj1FxX32&limit=10";
 
   //   // // // Perfoming an AJAX GET request to our queryURL
     $.ajax({
@@ -53,7 +50,8 @@ function createButtons() {
 
     // //   // After the data from the AJAX request comes back
       .then(function(response) {
-      
+     console.log(response);
+
         var results = response.data;
         for(var i = 0; i < results.length; i++){
           var cartoonDiv = $("<div>");
@@ -62,7 +60,7 @@ function createButtons() {
           toonImage.attr("src", results[i].images.fixed_height.url);
           cartoonDiv.append(p);
           cartoonDiv.append(toonImage);
-          $("#CartoonHolder").prepend(cartoonDiv);
+          $("#imgContainer").prepend(cartoonDiv);
         }
 
     // //     // Saving the image_original_url property
