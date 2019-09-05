@@ -21,6 +21,7 @@ function createButtons() {
 //  Event handler when a new cartoon is added
 $("#addCartoon").on("click", function (event) {
   event.preventDefault();
+  $("#cartoonHolder").empty();
 
   var cartoon = $("#cartoonInput").val().trim();
   topics.push(cartoon);
