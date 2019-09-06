@@ -69,7 +69,8 @@ $("#cartoonHolder").on("click", "button", function (event) {
 
       var results = response.data;
       for (var i = 0; i < results.length; i++) {
-        var cartoonDiv = $("<div>");
+        var cartoonDiv = $("<div>").addClass("gif");
+
         var p = $("<p>").text("Rating: " + results[i].rating);
         var toonImage = $("<img>");
         toonImage.attr("src", results[i].images.fixed_height.url);
